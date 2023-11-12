@@ -10,4 +10,4 @@ week = now.weekday()
 if week == 6:
     with open("quates.txt","r") as data:
         content = data.readlines()
-        
+        quote = random.choice(content)
