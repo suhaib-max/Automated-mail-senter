@@ -15,4 +15,12 @@ if week == 6:
         content = data.readlines()
         quote = random.choice(content)
 
-
+    print(quote)
+    #smtp= mail server provident it defulted to google gmail
+    with smtplib.SMTP("smtp.gmail.com",port=587) as connection:
+        #for the securing our data in encrpted
+        connection.starttls()
+        connection.login(user=email,password=password)
+        connection.sendmail(from_addr=email,
+                            to_addrs="suhaibvbm@gmail.com",
+                            msg=f"Subject:Monday motivational quotes\n\n{quote}")
